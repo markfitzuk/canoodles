@@ -33,7 +33,10 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        
+        //disables the webview from overlaying over the status bar
         StatusBar.overlaysWebView(false);        
+        // colours the status bar pink to match the canoodles branding
         StatusBar.backgroundColorByHexString("#D98BC7");
     },
     // Update DOM on a Received Event

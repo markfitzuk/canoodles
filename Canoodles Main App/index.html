@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <title>Canoodles</title>
+
+    <!--Required CSS-->
+    <link href="content/css/kendo.common.min.css" rel="stylesheet">
+    <link href="content/css/kendo.default.min.css" rel="stylesheet">
+    <link href="content/css/kendo.mobile.all.min.css" rel="stylesheet">
+    <link href="content/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="content/css/style.css">
+
+    <!-- Required Javascript Librarys -->
+    <script src="content/js/jquery.min.js"></script>
+    <script src="content/js/kendo.mobile.min.js"></script>
+    <script src="content/js/kendo.culture.en-GB.min.js"></script>
+
+    <!-- Load in Takeaway Javascript -->
+    <script src="content/js/canoodles.js"></script>
+    
+    <!-- Override Default $ Currency with £ -->
+    <script type="text/javascript">
+    kendo.culture("en-GB");
+    </script>
+</head>
+<body>
+
+
+ <!-- Sets the main layout for the page -->
+
+    <div data-role="layout" data-id="default">
+
+        <!-- Sets The Nav Bar & Header With Logo-->
+
+        <header data-role="header">
+        <div data-role="navbar">
+        <img data-align="center" src="content/images/canoodleslogo.svg">
+        </div>
+        </header>
+
+        <!-- End Of Code Block -->
+
+
+
+        <!-- Sets The Tab Strip Along The Bottom-->
+
+        <footer data-role="footer" data-id="default">
+        <div data-role="tabstrip">
+            <a href="#index" data-icon="home">Home</a>
+            <a href="#menu" data-icon="organize">Our menu</a>
+            <a href="#cart" data-icon="cart">Cart</a>
+            <a href="#account" data-icon="contacts">Account</a>
+        </div>
+        </footer>
+    </div>
+
+        <!-- End Of Code Block -->
+
+        
+        <!-- Creates the Home Page Tab id="index" from the tab strip -->
+
+    <div data-title="Canoodles" data-role="view" id="index" data-url="/" data-layout="default" data-model="viewModel" data-before-show="showHomeView">
+        <ul
+            id="featured"
+            class="item-list"
+            data-type="flat"
+            data-role="listview"
+            data-template="menuTemplate"
+            data-bind="source: dataSource"
+        ></ul>
+    </div>
+
+        <!-- End Of Code Block -->
+
+
+        <!-- Creates the Menu Page Tab id="menu" from the tab strip -->
+
+    <div data-title="Chef Ooy's Menu" data-role="view" id="menu" data-layout="default" data-model="viewModel" data-show="showMenuView">
+        <ul
+            id="menuList"
+            class="item-list"
+            data-role="listview"
+            data-template="menuTemplate"
+            data-bind="source: dataSource"
+        ></ul>
+    </div>
+
+        <!-- Creates the Order Pad Page -->
+
+
+    <div data-role="view" id="cart" data-layout="default" data-title="Cart" data-model="viewModel" data-show="showCartView">
+        <h2 id="total" data-bind="text: showTotal"></h2>
+        <img src="content/images/sad.png" id="empty-icon">
+        <a id="checkout" data-bind="click: checkout" class="red-button" href="#done" data-role="button">Call To Order</a>
+        <ul id="cartList"
+            class="item-list"
+            data-template="cartItemTemplate"
+            data-bind="source: added"
+            data-role="listview"
+            data-style="inset"></ul>
+    </div>
+
+            <!-- End Of Code Block -->
+
+
+
+            <!-- Creates the Account Tab Page -->
+
+    <div data-role="view" id="account" id="buttongroup-home" data-layout="default" data-title="My Account" data-show="mobileSalesViewInit">
+    <ul id="select-map-contact">
+        <li>
+            Map
+        </li>
+        <li>
+            Contact
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset">
+<div id="map"></div>
+    </ul>
+    <ul data-role="listview" data-style="inset" style="display:none">
+       <div>Test 2</div>
+    </ul>
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+function initializeMap() {
+
+var mapOptions = {
+        credentials: "AvBAJPEsM9IU21hPCs5PnTqmEPoboMM8OXKaxJ2gqq0WOKxhs5a_KjqcVsRsSOub",
+        mapTypeId: Microsoft.Maps.MapTypeId.road,
+        center: new Microsoft.Maps.Location(43.069452, -89.411373),
+        zoom: 11
+    };
+    var map = new Microsoft.Maps.Map(document.getElementById("map"), mapOptions);
+
+}
+
+}
+
+</script>
+
+<script>
+    function mobileSalesViewInit() {
+        var listviews = this.element.find("ul.km-listview");
+
+        $("#select-map-contact").kendoMobileButtonGroup({
+            select: function(e) {
+                listviews.hide()
+                         .eq(e.index)
+                         .show();
+            },
+            index: 0
+        });
+    }
+</script>
+
+<style scoped>
+#buttongroup-home .head {
+    display: block;
+    margin: 1em;
+    height: 110px;
+    background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.km-ios .head,
+.km-blackberry .head {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#select-period {
+    margin: 1em auto .4em auto;
+}
+#buttongroup-home .km-list span {
+    float: right;
+}
+#buttongroup-home .sales-up {
+    color: green;
+}
+#buttongroup-home .sales-down {
+    color: red;
+}
+#buttongroup-home .sales-hold {
+    color: blue;
+}
+</style>
+
+
+
+            <!-- End Of Code Block -->
+
+
+            <!-- Creates the DONE page loaded from the cart Page -->
+
+    <div data-role="view" id="done">
+        <header data-role="header"> <div data-role="navbar"> <span data-role="view-title">Done!</span> </div>
+        </header>
+        <div data-role="content" class="km-insetcontent">
+            <img src="content/images/happy.png" id="done-icon">
+            <h2>Thanks for shopping!</h2>
+            <h3>Your Canoodles is on the way.</h3>
+            <a id="done-button" href="#cart" data-role="button">Done</a>
+        </div>
+    </div>
+
+            <!-- End Of Code Block -->
+
+             <!-- Creates the Dish Details Nav Bar -->
+
+    <div data-role="view" id="details" data-transition="slide" data-layout="default" data-model="viewModel" data-show="showDetailsView">
+        <header data-role="header">
+        <div data-role="navbar">
+            <a data-role="backbutton" data-align="left">Back</a>
+            <span data-role="view-title" data-bind="text: currentItem.name"></span>
+        </div>
+        </header>
+
+         <!-- Creates the content page for dish details -->
+
+        <div data-role="content">
+            <aside>
+                <img data-bind="srcPath: currentItem.image" />
+                <span class="price" data-bind="format: currentItem.price"></span></span>
+                <a data-role="button" data-bind="click: addToCart">Order</a>
+            </aside>
+            <h2 data-bind="text: currentItem.name"></h2>
+            <p data-bind="text: currentItem.description"></p>
+            <span class="added" data-bind="innerText: currentItem.ordered, visible: showLabel"></span>
+        </div>
+    </div>
+
+          <!-- End Of Code Block -->
+
+          <script type="text/javascript" src="js/index.js"></script>
+
+          <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+
+        <script type="text/javascript">
+            app.initialize();
+
+            </script>
+
+    <script id="menuTemplate" type="text/x-kendo-template">
+        <a data-role="button"
+            data-bind="click: addToCart"
+            data-item-id="#:id#">#:kendo.toString(price, "c")#</a>
+        <a
+            class="details-link"
+            data-role="listview-link"
+            href="\#details?id=#:id#">
+            <img src="content/images/75/#:image#" />
+            <h2>#:name#</h2>
+            <span class="added" data-bind="visible: ordered">#= data.ordered # Added To Order Pad.</span>
+        </a>
+    </script>
+
+    <script id="cartItemTemplate" type="text/x-kendo-template">
+        <a
+            class="red-button"
+            data-bind="click: removeItem"
+            data-item-id="#:id#"
+            data-role="button">&nbsp;&\\#x2716;&nbsp;</a>
+        <a
+            class="details-link"
+            data-role="listview-link"
+            href="\#details?id=#:id#">
+            <img src="content/images/75/#:image#" />
+            <h2>#:name# (x #:ordered#)</h2>
+            <span class="price">Total: #:kendo.toString(price * ordered, "c")#</span>
+        </a>
+    </script>
+
+    <script>
+
+        app = new kendo.mobile.Application($(document.body));
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,183 @@
+[
+    {
+        "id": 1,
+         "name": "Crispy Wan tons",
+         "price": 3.50,
+         "image": "1.png",
+         "category": "1. Starters",
+         "description": "Thai Crispy Wan tons with sweet chilli dip.",
+         "featured": true
+    },
+    {
+        "id": 2,
+         "name": "Veg Spring Rolls",
+         "price": 3.50,
+         "image": "2.png",
+         "category": "1. Starters",
+         "description": "Mini Veg Spring Rolls with sweet chiili dip.",
+         "featured": false
+    },
+    {
+        "id": 3,
+         "name": "Thai Sesame Toast",
+         "price": 3.50,
+         "image": "3.png",
+         "category": "1. Starters",
+         "description": "Thai Sesame Toast's made with minced pork with sweet chilli dip.",
+         "featured": true
+    },
+    {
+        "id": 4,
+         "name": "Sweet Chilli Noodles",
+         "price": 5.00,
+         "image": "4.png",
+         "category": "2. Nice and Tasty",
+         "description": "Chef Ooy's World Famous Sweet Chilli chicken Noodles.",
+         "featured": true
+    },
+    {
+        "id": 5,
+         "name": "Pad See Yew Guy",
+         "price": 4.50,
+         "image": "5.png",
+         "category": "2. Nice and Tasty",
+         "description": "Stir fried rice noodles with chicken, sweet soy, bean sprouts, spring onions & garlic.",
+         "featured": false
+    },
+    {
+        "id": 6,
+         "name": "Pad wun sen",
+         "price": 5.50,
+         "image": "6.png",
+         "category": "2. Nice and Tasty",
+         "description": "Stir fried vermicelli noodles with minced pork, garlic, black pepper & spring onion.",
+         "featured": true
+    },
+    {
+        "id": 7,
+         "name": "Pad Thai",
+         "price": 5.50,
+         "image": "7.png",
+         "category": "2. Nice and Tasty",
+         "description": "(chicken & prawn)-Bangkok's most famous street dish made with rice ribbon noodles, garlic, bean sprouts, carrots, spring onions, palm sugar, nam pia, tamarind sauce, coriander, peanuts & lemon)",
+         "featured": false
+    },
+    {
+        "id": 8,
+         "name": "Shiromi",
+         "price": 9.50,
+         "image": "shiromi.jpg",
+         "category": "Sashimi",
+         "description": "White fish pieces.",
+         "featured": false
+    },
+    {
+        "id": 9,
+         "name": "Tekka maki",
+         "price": 6.00,
+         "image": "tekka-maki.jpg",
+         "category": "Hosomaki",
+         "description": "Tuna roll with wasabi. - 6 pieces",
+         "featured": true
+    },
+    {
+        "id": 10,
+         "name": "Hosomaki Mix",
+         "price": 17.00,
+         "image": "hosomaki-mix.jpg",
+         "category": "Hosomaki",
+         "description": "18 pieces.",
+         "featured": false
+    },
+    {
+        "id": 11,
+         "name": "California rolls",
+         "price": 7.75,
+         "image": "california-rolls.jpg",
+         "category": "Traditionall Rolls",
+         "description": "Crab sticks, avocado and cucumber. - 8 pieces",
+         "featured": true
+    },
+    {
+        "id": 12,
+         "name": "Seattle rolls",
+         "price": 8.00,
+         "image": "seattle-rolls.jpg",
+         "category": "Traditionall Rolls",
+         "description": "Smoked salmon. Cucumber. Cream cheese.",
+         "featured": false
+    },
+    {
+        "id": 13,
+         "name": "Spicy Tuna rolls",
+         "price": 6.00,
+         "image": "spicytuna-rolls.jpg",
+         "category": "Traditionall Rolls",
+         "description": "Spicy tuna, spring onion and avocado. - 6 pieces",
+         "featured": true
+    },
+    {
+        "id": 14,
+         "name": "Ebi rolls",
+         "price": 8.00,
+         "image": "ebi-rolls.jpg",
+         "category": "Traditionall Rolls",
+         "description": "King prawns, avocado and asparagus. - 8 pieces",
+         "featured": false
+    },
+    {
+        "id": 15,
+         "name": "Chicken Teriyaki",
+         "price": 12.00,
+         "image": "chicken-teriyaki.jpg",
+         "category": "Hot Dishes",
+         "description": "Sauted chicken with teiyaki sauce.",
+         "featured": false
+    },
+    {
+        "id": 16,
+         "name": "Salmon Teriyaki",
+         "price": 13.50,
+         "image": "salmon-teriyaki.jpg",
+         "category": "Hot Dishes",
+         "description": "Sauted salmon with teriyaki sauce.",
+         "featured": true
+    },
+    {
+        "id": 17,
+         "name": "Gohan",
+         "price": 3.00,
+         "image": "gohan.jpg",
+         "category": "Hot Dishes",
+         "description": "Steamed rice.",
+         "featured": false
+    },
+    {
+        "id": 18,
+         "name": "Tori Katsu",
+         "price": 11.00,
+         "image": "tori-katsu.jpg",
+         "category": "Hot Dishes",
+         "description": "Pan-fried chicken breast with yasai salad.",
+         "featured": false
+    },
+    {
+        "id": 19,
+         "name": "Yaki Udon",
+         "price": 11.50,
+         "image": "yaki-udon.jpg",
+         "category": "Hot Dishes",
+         "description": "Udon noddles with chicken, king prawns and vegetables.",
+         "featured": true
+    },
+    {
+        "id": 20,
+         "name": "Marks Test",
+         "price": 100.50,
+         "image": "yaki-udon.jpg",
+         "category": "Hot Dishes",
+         "description": "Marks cool meal",
+         "featured": true
+    }
+
+]

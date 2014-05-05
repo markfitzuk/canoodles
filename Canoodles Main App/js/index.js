@@ -35,6 +35,22 @@ var app = {
     onDeviceReady: function() {
         StatusBar.overlaysWebView(false);        
         StatusBar.backgroundColorByHexString("#D98BC7");
+        
+        function onConfirm(button) {
+        alert('You selected button ' + button);
+    }
+
+    // Show a custom confirmation dialog
+    //
+    function showConfirm() {
+        navigator.notification.confirm(
+            'You are the winner!',  // message
+            onConfirm,              // callback to invoke with index of button pressed
+            'Game Over',            // title
+            'Restart,Exit'          // buttonLabels
+        );
+    }
+        
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

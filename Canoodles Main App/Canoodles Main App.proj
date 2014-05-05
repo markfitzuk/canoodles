@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>9e59aa10-a1cf-4384-ab8a-ee606776fc2c</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>com.maduber.push</AppIdentifier>
+    <AppIdentifier>com.maduber.canoodles</AppIdentifier>
     <ProjectName>Canoodles Main App</ProjectName>
     <IsRunnable>true</IsRunnable>
     <FrameworkVersion>3.2.0</FrameworkVersion>
@@ -14,7 +14,9 @@
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
     <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
     <BundleVersion>1.0</BundleVersion>
-    <Description>Canoodles Main App</Description>
+    <Description>Canoodles</Description>
+    <DisplayName>Canoodles</DisplayName>
+    <Author>Mark Fitzpatrick</Author>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

@@ -35,7 +35,6 @@
     <div data-role="layout" data-id="default">
 
         <!-- Sets The Nav Bar & Header With Logo-->
-
         <header data-role="header">
         <div data-role="navbar">
         <img data-align="center" src="content/images/canoodleslogo.svg">
@@ -111,89 +110,10 @@
             <!-- Creates the Account Tab Page -->
 
     <div data-role="view" id="account" id="buttongroup-home" data-layout="default" data-title="My Account" data-show="mobileSalesViewInit">
-    <ul id="select-map-contact">
-        <li>
-            Map
-        </li>
-        <li>
-            Contact
-        </li>
-    </ul>
-    <ul data-role="listview" data-style="inset">
-<div id="map"></div>
-    </ul>
-    <ul data-role="listview" data-style="inset" style="display:none">
-       <div>Test 2</div>
-    </ul>
+<h1>
+    Nothing here yet
+        </h1>
 </div>
-
-</div>
-
-<script type="text/javascript">
-
-function initializeMap() {
-
-var mapOptions = {
-        credentials: "AvBAJPEsM9IU21hPCs5PnTqmEPoboMM8OXKaxJ2gqq0WOKxhs5a_KjqcVsRsSOub",
-        mapTypeId: Microsoft.Maps.MapTypeId.road,
-        center: new Microsoft.Maps.Location(43.069452, -89.411373),
-        zoom: 11
-    };
-    var map = new Microsoft.Maps.Map(document.getElementById("map"), mapOptions);
-
-}
-
-}
-
-</script>
-
-<script>
-    function mobileSalesViewInit() {
-        var listviews = this.element.find("ul.km-listview");
-
-        $("#select-map-contact").kendoMobileButtonGroup({
-            select: function(e) {
-                listviews.hide()
-                         .eq(e.index)
-                         .show();
-            },
-            index: 0
-        });
-    }
-</script>
-
-<style scoped>
-#buttongroup-home .head {
-    display: block;
-    margin: 1em;
-    height: 110px;
-    background: url(../../content/mobile/shared/sales.jpg) no-repeat center center;
-    -webkit-background-size: 100% auto;
-    background-size: 100% auto;
-}
-.km-ios .head,
-.km-blackberry .head {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-#select-period {
-    margin: 1em auto .4em auto;
-}
-#buttongroup-home .km-list span {
-    float: right;
-}
-#buttongroup-home .sales-up {
-    color: green;
-}
-#buttongroup-home .sales-down {
-    color: red;
-}
-#buttongroup-home .sales-hold {
-    color: blue;
-}
-</style>
-
-
 
             <!-- End Of Code Block -->
 
@@ -222,30 +142,27 @@ var mapOptions = {
             <span data-role="view-title" data-bind="text: currentItem.name"></span>
         </div>
         </header>
+    </div>
 
          <!-- Creates the content page for dish details -->
 
         <div data-role="content">
             <aside>
                 <img data-bind="srcPath: currentItem.image" />
-                <span class="price" data-bind="format: currentItem.price"></span></span>
+                <span class="price" data-bind="format: currentItem.price"></span>
                 <a data-role="button" data-bind="click: addToCart">Order</a>
             </aside>
             <h2 data-bind="text: currentItem.name"></h2>
             <p data-bind="text: currentItem.description"></p>
             <span class="added" data-bind="innerText: currentItem.ordered, visible: showLabel"></span>
         </div>
-    </div>
 
           <!-- End Of Code Block -->
 
-          <script type="text/javascript" src="js/index.js"></script>
-
-          <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
-
-        <script type="text/javascript">
+        
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
             app.initialize();
-
             </script>
 
     <script id="menuTemplate" type="text/x-kendo-template">
@@ -279,10 +196,8 @@ var mapOptions = {
     </script>
 
     <script>
-
         app = new kendo.mobile.Application($(document.body));
     </script>
-
-</body>
-</html>
+    </body>
+    </html>
 
